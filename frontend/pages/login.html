@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <link href="../styles/reset.css" rel="stylesheet" />
-    <link href="../styles/loginStyle.css" rel="stylesheet" />
+    <link href="../styles/login.css" rel="stylesheet" />
     <title>Storage Falcon</title>
   </head>
   <body>
@@ -15,16 +19,28 @@
       <div>
         <form class="form">
           <div class="login-form">
-            <label>
-              <label for="email">Email</label>
-              <input type="email" id="email" required />
-            </label>
+            <label for="email">Email</label>
+            <div class="email-icon">
+              <i class="fa-regular fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
           </div>
           <div>
-            <label>
-              <label for="password">password</label>
-              <input type="password" id="password" required />
-            </label>
+            <label for="password">password</label>
+            <div class="password-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="••••••"
+                required
+              />
+            </div>
           </div>
           <button class="btn-login" type="submit">Login</button>
         </form>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../styles/register.css" rel="stylesheet" />
+    <link href="../styles/reset.css" rel="stylesheet" />
+    <title>Storage Falcon</title>
+  </head>
+  <body>
+    <div class="login-card">
+      <div>
+        <h1 class="title">Register</h1>
+      </div>
+      <div>
+        <form class="form">
+          <div class="login-form">
+            <label for="email">Email</label>
+            <div class="email-icon">
+              <i class="fa-regular fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <label for="password">password</label>
+            <div class="password-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="••••••"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <label for="confirm-password">confirm the password</label>
+            <div class="passwordConfirm-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                id="confirm-password"
+                placeholder="••••••"
+                required
+              />
+            </div>
+          </div>
+          <div class="btn-icon">
+            <i class="fa-solid fa-arrow-right" style="color: #ffffff"></i>
+            <button class="btn-register" type="submit">create account</button>
+          </div>
+        </form>
+      </div>
+      <div class="error-message"></div>
+    </div>
+    <script src="../scripts/register.js"></script>
+  </body>
+</html>

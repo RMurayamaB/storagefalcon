@@ -33,9 +33,43 @@ label {
 input {
   width: 100%;
   padding: 10px;
+  padding-left: 35px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.email-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.email-icon i {
+  position: absolute;
+  left: 10px;
+  top: 52%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.password-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
 }
 
 .btn-login {
