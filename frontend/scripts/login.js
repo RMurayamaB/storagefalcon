@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordInput = document.querySelector('#password');
   const messageError = document.querySelector('.error-message');
 
-  form.addEventListener('submit', function (event) {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     let isValid = true;
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isValid) {
       alert('Login bem-sucedido!');
-      
     }
   });
 });
