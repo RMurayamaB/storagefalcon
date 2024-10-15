@@ -35,7 +35,7 @@ body {
 
 label {
   display: block;
-  font-weight: bold;
+  font-weight: semibold;
   margin-bottom: 4px;
 }
 input {

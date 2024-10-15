@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../styles/reset.css" rel="stylesheet" />
+    <link href="../styles/home.css" rel="stylesheet" />
+    <title>StorageFalcon</title>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <ul class="sidebar-list">
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-folder"></i>
+            </a>
+            <span class="text-span">Home</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+            <span class="text-span">Trash</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- list of folders -->
+      <header class="header">
+        <h1 class="header-title">
+          My folder
+          <i
+            class="fa-solid fa-box-archive"
+            style="color: #000; font-size: 24px"
+          ></i>
+        </h1>
+        <button class="btn-create">
+          Create Folder
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </header>
+
+      <table class="table">
+        <thead class="table-head">
+          <tr>
+            <th>Name</th>
+            <th>Create Date</th>
+            <th>Last modified</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <!--<tr class="table-row">
+            <td><i class="fa-duotone fa-solid fa-folder"></i></td>
+            <td></td>
+            <td></td>
+          </tr>-->
+        </tbody>
+      </table>
+
+      <!-- modal create folder -->
+      <section class="modal">
+        <div class="modal-content">
+          <span class="close-modal"><i class="fa-solid fa-x"></i></span>
+          <h2>Create Folder</h2>
+          <form class="form-create">
+            <label for="folder-name">Folder Name</label>
+            <input
+              type="text"
+              id="folder-name"
+              placeholder="Enter folder name"
+            />
+          </form>
+          <button class="btn-create-folder">Create</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="../scripts/home.js"></script>
+  </body>
+</html>
