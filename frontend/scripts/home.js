@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('folders', JSON.stringify(folders));
       renderFolders();
       closeModal();
-      folderName.value = '';
     }
   });
 
