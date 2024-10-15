@@ -8,11 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let folders = JSON.parse(localStorage.getItem('folders')) || [];
 
   createFolderButton.addEventListener('click', () => {
-    modal.style.display = 'block';
+    modal.classList.remove('close');
+    modal.classList.add('active');
   });
 
   function closeModal() {
-    modal.style.display = 'none';
+    folderName.value = '';
+    modal.classList.add('close');
+    modal.addEventListener(
+      'animationend',
+      () => {
+        modal.classList.remove('active');
+      },
+      { once: true },
+    );
   }
 
   modalCloseButton.addEventListener('click', closeModal);
@@ -50,6 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
   btnCreateModal.addEventListener('click', () => {
     const folderNameValue = folderName.value;
 
+    folderName.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        btnCreateModal.click();
+      }
+    });
     if (folderNameValue !== '') {
       const newFolder = {
         name: folderNameValue,
