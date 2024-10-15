@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCreateModal = document.querySelector('.btn-create-folder');
   let folders = JSON.parse(localStorage.getItem('folders')) || [];
 
+  const errorMessage = document.querySelector('.error-message');
+
   createFolderButton.addEventListener('click', () => {
     modal.classList.remove('close');
     modal.classList.add('active');
@@ -58,23 +60,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnCreateModal.addEventListener('click', () => {
     const folderNameValue = folderName.value;
+    const trimmedFolderName = folderNameValue.trim();
 
-    folderName.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        btnCreateModal.click();
-      }
-    });
-    if (folderNameValue !== '') {
-      const newFolder = {
-        name: folderNameValue,
-        createDate: new Date().toLocaleDateString(),
-        updateDate: new Date().toLocaleDateString(),
-      };
+    if (trimmedFolderName === '') {
+      errorMessage.textContent = 'Please enter a name for the folder.';
+      errorMessage.style.display = 'block';
+      setTimeout(() => {
+        errorMessage.style.display = 'none';
+      }, 3000);
+      return;
+    }
+    if (folderNameValue.startsWith(' ')) {
+      errorMessage.textContent = 'Folder name cannot start with a space.';
+      errorMessage.style.display = 'block';
+      setTimeout(() => {
+        errorMessage.style.display = 'none';
+      }, 3000);
+      return;
+    }
 
-      folders.push(newFolder);
-      localStorage.setItem('folders', JSON.stringify(folders));
-      renderFolders();
-      closeModal();
+    const newFolder = {
+      name: trimmedFolderName,
+      createDate: new Date().toLocaleDateString(),
+      updateDate: new Date().toLocaleDateString(),
+    };
+
+    folders.push(newFolder);
+    localStorage.setItem('folders', JSON.stringify(folders));
+    renderFolders();
+    closeModal();
+  });
+
+  folderName.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      btnCreateModal.click();
     }
   });
 

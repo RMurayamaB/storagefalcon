@@ -240,14 +240,14 @@ i {
   }
   to {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
 @keyframes modalOut {
   from {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
   to {
     opacity: 0;
@@ -307,6 +307,18 @@ i {
   background-color: #000;
   color: #fff;
   border: 2px solid #000;
+}
+
+.error-message {
+  display: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #f44336;
+  background-color: #ffe6e6;
+  color: #f44336;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 /*Melhorar a responsividade :( */
