@@ -21,6 +21,7 @@ class FolderManager {
 
   editFolderName(index, newName) {
     this.folders[index].name = newName;
+    this.folders[index].updateDate = new Date().toLocaleDateString();
     localStorage.setItem('folders', JSON.stringify(this.folders));
     this.renderFolders();
   }
@@ -56,7 +57,21 @@ class FolderManager {
         const index = e.target
           .closest('.btn-delete')
           .getAttribute('data-index');
-        this.deleteFolder.open(() => this.deleteFolder(index));
+        this.deleteModal.open(() => this.deleteFolder(index));
+      });
+    });
+
+    document.querySelectorAll('.btn-edit').forEach((button) => {
+      button.addEventListener('click', (e) => {
+        const index = e.target
+          .closest('.btn-edit')
+          .getAttribute('data-index');
+        this.editModal.open(() => {
+          const newName = prompt('Enter new folder name:');
+          if (newName) {
+            this.editFolderName(index, newName);
+          }
+        });
       });
     });
 

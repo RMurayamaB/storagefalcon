@@ -10,8 +10,10 @@
     <link href="../styles/reset.css" rel="stylesheet" />
     <link href="../styles/home.css" rel="stylesheet" />
     <title>StorageFalcon</title>
+
   </head>
   <body>
+    
     <aside class="sidebar">
       <div class="sidebar-content">
         <ul class="sidebar-list">
@@ -92,12 +94,12 @@
             <label for="folder-name">Rename Folder</label>
             <input
               type="text"
-              id="folder-name"
+              id="folder-name-edit"
               placeholder="Enter new folder name"
             />
           </form>
           <div class="error-message"></div>
-          <button class="btn-create-folder">Save</button>
+          <button class="btn-save-folder">Save</button>
         </div>
       </section>
 
@@ -108,8 +110,8 @@
           <h2>Delete Folder</h2>
           <p>Are you sure you want to delete this folder?</p>
           <div class="error-message"></div>
-          <button class="btn-create-folder">Delete</button>
-          <button class="btn-create-folder">Cancel</button>
+          <button class="confirm-button">Delete</button>
+          <button class="cancel-button">Cancel</button>
         </div>
       </section>
     </main>

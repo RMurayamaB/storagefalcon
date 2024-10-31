@@ -2,11 +2,12 @@ import Modal from './components/Modal.js';
 import FolderManager from './components/FolderManager.js';
 import CreateFolder from './components/CreateFolder.js';
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const modalElement = document.querySelector('.modal');
-  const deleteModalElement = document.querySelector('.delete-modal');
-  const editModalElement = document.querySelector('.edit-modal');
-  const deleteCloseButton = document.querySelector('.close-modal');
+  const deleteModalElement = document.querySelector('#delete-folder');
+  const editModalElement = document.querySelector('#edit-folder');
+  const deleteCloseButton = deleteModalElement.querySelector('.close-modal');
   const editCloseButton = editModalElement.querySelector('.close-modal');
 
   const closeButton = document.querySelector('.close-modal');
