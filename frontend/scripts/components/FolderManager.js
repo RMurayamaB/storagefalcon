@@ -1,7 +1,9 @@
 class FolderManager {
-  constructor(tableSelector) {
+  constructor(tableSelector, deleteModal, editModal) {
     this.folders = JSON.parse(localStorage.getItem('folders')) || [];
     this.tableFolders = document.querySelector(tableSelector);
+    this.deleteModal = deleteModal;
+    this.editModal = editModal;
     this.renderFolders();
   }
 
@@ -13,6 +15,12 @@ class FolderManager {
 
   deleteFolder(index) {
     this.folders.splice(index, 1);
+    localStorage.setItem('folders', JSON.stringify(this.folders));
+    this.renderFolders();
+  }
+
+  editFolderName(index, newName) {
+    this.folders[index].name = newName;
     localStorage.setItem('folders', JSON.stringify(this.folders));
     this.renderFolders();
   }
@@ -48,9 +56,11 @@ class FolderManager {
         const index = e.target
           .closest('.btn-delete')
           .getAttribute('data-index');
-        this.deleteFolder(index);
+        this.deleteFolder.open(() => this.deleteFolder(index));
       });
     });
+
+    
   }
 }
 

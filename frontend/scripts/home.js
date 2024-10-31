@@ -4,12 +4,23 @@ import CreateFolder from './components/CreateFolder.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const modalElement = document.querySelector('.modal');
+  const deleteModalElement = document.querySelector('.delete-modal');
+  const editModalElement = document.querySelector('.edit-modal');
+  const deleteCloseButton = document.querySelector('.close-modal');
+  const editCloseButton = editModalElement.querySelector('.close-modal');
+
   const closeButton = document.querySelector('.close-modal');
   const createFolderButton = document.querySelector('.btn-create');
 
   const modalComponent = new Modal(modalElement, closeButton);
+  const deleteModal = new Modal(deleteModalElement, deleteCloseButton);
+  const editModal = new Modal(editModalElement, editCloseButton);
 
-  const folderManager = new FolderManager('.table-body');
+  const folderManager = new FolderManager(
+    '.table-body',
+    deleteModal,
+    editModal,
+  );
 
   const createFolder = new CreateFolder(
     '.btn-create-folder',

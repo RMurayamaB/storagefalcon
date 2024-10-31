@@ -14,7 +14,7 @@ ul {
 
 .sidebar {
   width: 100px;
-  background-color: #2d3748;
+  background-color: #2e2e2e;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -133,7 +133,7 @@ i {
 
 .table-head th {
   padding: 12px 15px;
-  background-color: #2d3748;
+  background-color: #2e2e2e;
   color: #fff;
   text-align: left;
   font-weight: normal;
@@ -141,7 +141,7 @@ i {
 }
 
 .table-body .table-row {
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #ededed;
 }
 
 .table-body .table-row:hover {
