@@ -309,6 +309,24 @@ i {
   transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
+.btn-save-folder{
+  background: transparent;
+  padding: 10px 25px;
+  margin-top: 20px;
+  border: 2px solid #000;
+  color: #000;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-save-folder:hover {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+}
 
 .confirm-button{
   background: #f44336;

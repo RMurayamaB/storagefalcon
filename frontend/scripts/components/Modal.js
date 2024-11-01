@@ -3,7 +3,8 @@ class Modal {
     this.modalElement = modalElement;
     this.closeButton = closeButton;
 
-    this.confirmButton = this.modalElement.querySelector('.btn-save-folder');
+    this.confirmButton = this.modalElement.querySelector('.confirm-button');
+    this.confirmEdit = this.modalElement.querySelector('.btn-save-folder');
     this.cancelButton = this.modalElement.querySelector('.cancel-button');
 
     this.closeButton.addEventListener('click', () => this.close());
@@ -19,12 +20,14 @@ class Modal {
     });
   }
 
-  open(onConfirm = null) {
+  open(onConfirm = null, isEdit = false) {
     this.modalElement.classList.remove('close');
     this.modalElement.classList.add('active');
-    if(this.confirmButton){
 
-      this.confirmButton.onclick = () => {
+    const buttonToUse = isEdit ? this.confirmEdit : this.confirmButton;
+
+    if (buttonToUse) {
+      buttonToUse.onclick = () => {
         if (onConfirm) onConfirm();
         this.close();
       };

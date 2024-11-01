@@ -91,6 +91,14 @@ input:focus {
   background-color: rgb(58, 58, 58);
 }
 
+#buttonDiv{
+  margin-top: 10px;
+}
+
+#buttonDiv:hover{
+  background-color: #9ed7f1;
+}
+
 .card-link {
   display: flex;
   justify-content: space-between;

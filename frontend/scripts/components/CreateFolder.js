@@ -63,6 +63,8 @@ class CreateFolder {
       if (event.key === 'Enter') {
         this.createButton.click();
       }
+
+    
     });
   }
 }
