@@ -1,6 +1,6 @@
-import Modal from './components/Modal.js';
-import FolderManager from './components/FolderManager.js';
-import CreateFolder from './components/CreateFolder.js';
+import Modal from './Modal.js';
+import FolderManager from './FolderManager.js';
+import CreateFolder from './CreateFolder.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
