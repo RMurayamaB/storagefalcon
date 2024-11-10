@@ -47,11 +47,18 @@ class FolderManager {
         </td>
       `;
       this.tableFolders.appendChild(newRow);
+
+      newRow.addEventListener('dblclick', () => {
+        window.location.href = `folder.html?name=${encodeURIComponent(folder.name)}`;
+
+        });
+
     });
 
     this.initActionEvents();
   }
 
+  
   initActionEvents() {
     document.querySelectorAll('.btn-delete').forEach((button) => {
       button.addEventListener('click', (e) => {
@@ -61,6 +68,7 @@ class FolderManager {
         this.deleteModal.open(() => this.deleteFolder(index));
       });
     });
+    
 
     document.querySelectorAll('.btn-edit').forEach((button) => {
       button.addEventListener('click', (e) => {
@@ -102,41 +110,4 @@ class FolderManager {
 }
 
 export default FolderManager;
-
-
-// function renomearPasta(caminhoAtual, novoNome) {
-//   fetch('/renomear-pasta', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify({ caminhoAtual, novoNome })
-//   })
-//   .then(response => response.text())
-//   .then(data => alert(data))
-//   .catch(error => console.error('Erro:', error));
-// }
-
-
-
-
-//backend
-
-
-
-// const express = require('express');
-// const fs = require('fs');
-// const app = express();
-// app.use(express.json());
-
-// app.post('/renomear-pasta', (req, res) => {
-//   const { caminhoAtual, novoNome } = req.body;
-//   const novoCaminho = caminhoAtual.replace(/[^/]+$/, novoNome);
-
-//   fs.rename(caminhoAtual, novoCaminho, (err) => {
-//     if (err) return res.status(500).send('Erro ao renomear a pasta');
-//     res.send('Pasta renomeada com sucesso');
-//   });
-// });
-
-// app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
-
 

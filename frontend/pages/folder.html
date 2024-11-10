@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StorageFalcon</title>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link href="../styles/reset.css" rel="stylesheet" />
+  <link href="../styles/folder.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <ul class="sidebar-list">
+          <li>
+            <a href="home.html">
+              <i class="fa-solid fa-folder"></i>
+            </a>
+            <span class="text-span">Home</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+            <span class="text-span">Trash</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header>
+        <h1>Folder: <span id="folder-name"></span></h1>
+      </header>
+      <div class="upload-area" ondrop="handleDrop(event)" ondragover="allowDrop(event)">
+        <p>Drop your video file here</p>
+        <input type="file" accept="video/*" multiple onchange="handleFiles(this.files)">
+      </div>
+      <section id="file-gallery">
+
+        <!-- VIDEOSd -->
+      </section>
+    </main>
+  </div>
+  <script src="../scripts/folder.js"></script>
+</body>
+</html>

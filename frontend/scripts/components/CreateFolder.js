@@ -43,7 +43,7 @@ class CreateFolder {
       return 'Folder name cannot start with a space';
     }
 
-    return null;
+    return;
   }
 
   displayErrorMessage(message) {

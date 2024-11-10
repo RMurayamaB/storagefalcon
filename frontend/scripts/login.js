@@ -1,6 +1,6 @@
-// login.js
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.form');
+  const button = document.querySelector('.btn-login');
   const emailInput = document.querySelector('#email');
   const passwordInput = document.querySelector('#password');
   const messageError = document.querySelector('.error-message');
@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleCredentialResponse(response) {
     const data = jwt_decode(response.credential);
     console.log(data);
-    alert(`Login bem-sucedido! Bem-vindo, ${data.name}`);
-    // Aqui você pode redirecionar o usuário ou armazenar o token
+    alert(`successful login, welcome. ${data.name}`);
+
   }
 
   window.onload = function () {
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     google.accounts.id.renderButton(
       document.getElementById("buttonDiv"),
-      { theme: "outline", size: "large" }  // personalização
+      { theme: "outline", size: "large" } 
     );
-    google.accounts.id.prompt(); // Exibe o diálogo One Tap
+    google.accounts.id.prompt();
   };
 
   form.addEventListener('submit', (event) => {
@@ -42,9 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
       messageError.style.display = 'block';
       isValid = false;
     }
-
-    if (isValid) {
-      alert('Login bem-sucedido!');
+    if(isValid){
+      window.location.href = 'home.html';
     }
+
+
   });
+
+
 });

@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     let isValid = true;
     messageError.innerText = '';
-    messageError.style.display = 'none'; // Esconde a mensagem de erro inicialmente
+    messageError.style.display = 'none';
 
-    // Primeiro, verificar se o email é válido
     if (!emailTest.test(email.value)) {
       messageError.innerText = 'Invalid email';
       messageError.style.display = 'block';
@@ -22,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
       isValid = false;
       email.value = '';
     }
-    // Depois, verificar se as senhas coincidem
+
     else if (password.value !== confirmPassword.value) {
       messageError.innerText = 'Passwords do not match';
       messageError.style.display = 'block';
       messageError.style.color = 'red';
       isValid = false;
     }
-    // Finalmente, verificar a força da senha
+
     else if (!strongPasswordTest.test(password.value)) {
       messageError.innerText =
         'Password must be at least 8 characters long, include upper and lower case letters, numbers, and special characters.';
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
       isValid = false;
     }
 
-    // Mensagem de sucesso
     if (isValid) {
       messageError.innerText = 'Registration successful!';
       messageError.style.backgroundColor = 'rgba(0, 128, 0, 0.5)';
