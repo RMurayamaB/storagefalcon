@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isValid = false;
     }
     if(isValid){
-      window.location.href = 'home.html';
+      window.location.href = 'public/pages/home.html';
     }
 
 
